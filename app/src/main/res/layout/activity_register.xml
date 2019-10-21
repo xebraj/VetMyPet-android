@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.RegisterActivity">
+
+    <TextView
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/bg_gradient"
+            android:layout_height="0dp"
+            android:textColor="@color/White"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="Registro"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+
+    <LinearLayout
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/White"
+                android:text="Nombre completo" />
+
+        <EditText
+                android:textColor="@color/White"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/White"
+                android:text="Correo" />
+
+        <EditText
+                android:textColor="@color/White"
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/White"
+                android:text="Clave" />
+
+        <EditText
+                android:textColor="@color/White"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:text="Registrar" />
+
+        <TextView
+                android:id="@+id/tvGoToLogin"
+                android:textColor="@color/White"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="18dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="¿Ya tienes una cuenta?" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

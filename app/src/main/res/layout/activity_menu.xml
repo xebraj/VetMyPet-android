@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="5dp"
+        android:background="@drawable/bg_gradient"
+        tools:context=".ui.MenuActivity">
+
+    <TextView
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/White"
+            android:layout_height="60dp"
+            android:gravity="center_horizontal"
+            android:text="¡Bienvenido!"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+
+    <Button
+            android:id="@+id/btnCreate"
+            android:drawableStart="@drawable/ic_pets"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
+            style="@style/MenuButton"
+            android:text="Reservar cita"/>
+
+    <Button
+            android:id="@+id/btnVetMyPet"
+            android:drawableStart="@drawable/ic_schedule"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
+            style="@style/MenuButton"
+            android:text="Mis citas"/>
+
+    <Button
+            android:id="@+id/btnLogout"
+            android:drawableStart="@drawable/ic_power_off"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
+            style="@style/MenuButton"
+            android:text="Cerrar sesión"/>
+
+</LinearLayout>

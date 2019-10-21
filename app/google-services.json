@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "401577515788",
+    "firebase_url": "https://vetmypet-e68a0.firebaseio.com",
+    "project_id": "vetmypet-e68a0",
+    "storage_bucket": "vetmypet-e68a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401577515788:android:930196826cd03fd37e8729",
+        "android_client_info": {
+          "package_name": "com.vetmypet.vetmypet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "401577515788-86s7bt0drgoepkfi78mfroil71brhm3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW0_eWQBysxlR-KBQzml_wPli6m-uF6v4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "401577515788-86s7bt0drgoepkfi78mfroil71brhm3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

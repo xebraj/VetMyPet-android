@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        android:id="@+id/createLinearLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="6dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/bg_gradient"
+        tools:context=".ui.CreateActivity">
+
+    <TextView
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/White"
+            android:layout_height="60dp"
+            android:gravity="center_horizontal"
+            android:text="Reservar cita"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+
+    <include layout="@layout/card_view_step_one"/>
+    <include layout="@layout/card_view_step_two"/>
+    <include layout="@layout/card_view_step_three"/>
+
+</LinearLayout>

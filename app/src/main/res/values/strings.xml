@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">VetMyPet</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="date_format">%1$d-%2$s-%3$s</string>
+
+    <string name="item_Vetmypet_id">Cita medica %1$d</string>
+    <string name="item_Vetmypet_date">Atencion el dia %1$s</string>
+    <string name="item_Vetmypet_time">A las %1$s</string>
+    <string name="press_back_again">Presione una vez más para salir</string>
+    <string name="validate_mypet_description">La descripción es muy corta</string>
+    <string name="validate_mypet_date">Es necesario seleccionar una fecha</string>
+    <string name="validate_mypet_time">Es necesario definir una hora para la cita</string>
+
+</resources>
