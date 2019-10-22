@@ -20,10 +20,7 @@
         </activity>
         <activity android:name=".ui.RegisterActivity" android:launchMode="singleInstance">
         </activity>
-        <activity
-                android:name=".ui.MenuActivity"
-                android:label="@string/title_activity_menu"
-                android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".ui.MenuActivity">
         </activity>
         <activity
                 android:name=".ui.CreateActivity"

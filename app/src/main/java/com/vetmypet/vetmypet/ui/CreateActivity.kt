@@ -20,6 +20,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
+import kotlin.collections.ArrayList
 
 class CreateActivity : AppCompatActivity() {
 
@@ -62,7 +63,6 @@ class CreateActivity : AppCompatActivity() {
 
         }
 
-
         btnConfirm.setOnClickListener {
             Toast.makeText(this, "Cita registrada correctamente", Toast.LENGTH_SHORT).show()
             finish()
@@ -78,22 +78,16 @@ class CreateActivity : AppCompatActivity() {
         val call = apiService.getSpecialties()
         call.enqueue(object: Callback<ArrayList<Specialty>> {
             override fun onFailure(call: Call<ArrayList<Specialty>>, t: Throwable) {
-                Toast.makeText(this@CreateActivity, "Ocurrió un problema al cargar las especialidades", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@CreateActivity, getString(R.string.error_loading_specialties), Toast.LENGTH_SHORT).show()
                 finish()
             }
 
             override fun onResponse(call: Call<ArrayList<Specialty>>, response: Response<ArrayList<Specialty>>) {
-                if (response.isSuccessful) { // [200...300]
+                if (response.isSuccessful) { // [200...300)
                     val specialties = response.body()
-                    val specialtyOptions = ArrayList<String>()
-
-                    specialties?.forEach {
-                        specialtyOptions.add(it.name)
-                    }
-                    spinnerSpecialties.adapter = ArrayAdapter<String>(this@CreateActivity, android.R.layout.simple_list_item_1, specialtyOptions)
+                    spinnerSpecialties.adapter = ArrayAdapter<Specialty>(this@CreateActivity, android.R.layout.simple_list_item_1, specialties)
                 }
             }
-
         })
     }
 
@@ -133,18 +127,18 @@ class CreateActivity : AppCompatActivity() {
 
         // min date
         // max date
-            val datePickerDialog = DatePickerDialog(this, listener, year, month, dayOfMonth)
-            val datePicker = datePickerDialog.datePicker
+        val datePickerDialog = DatePickerDialog(this, listener, year, month, dayOfMonth)
+        val datePicker = datePickerDialog.datePicker
 
-            // set limits
-            val calendar = Calendar.getInstance()
-            calendar.add(Calendar.DAY_OF_MONTH, 1)
-            datePicker.minDate = calendar.timeInMillis // +1
-            calendar.add(Calendar.DAY_OF_MONTH, 29)
-            datePicker.maxDate = calendar.timeInMillis // +30
+        // set limits
+        val calendar = Calendar.getInstance()
+        calendar.add(Calendar.DAY_OF_MONTH, 1)
+        datePicker.minDate = calendar.timeInMillis // +1
+        calendar.add(Calendar.DAY_OF_MONTH, 29)
+        datePicker.maxDate = calendar.timeInMillis // +30
 
-            // show dialog
-            datePickerDialog.show()
+        // show dialog
+        datePickerDialog.show()
     }
 
     private fun displayRadioButtons() {
