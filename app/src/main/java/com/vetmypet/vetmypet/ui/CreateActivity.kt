@@ -6,11 +6,13 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AlertDialog
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.Toast
 import com.vetmypet.vetmypet.R
 import com.vetmypet.vetmypet.io.ApiService
+import com.vetmypet.vetmypet.model.Doctor
 import com.vetmypet.vetmypet.model.Specialty
 import kotlinx.android.synthetic.main.activity_create.*
 import kotlinx.android.synthetic.main.card_view_step_one.*
@@ -69,6 +71,7 @@ class CreateActivity : AppCompatActivity() {
         }
 
         loadSpecialties()
+        listenSpecialtyChanges()
 
         val doctorOptions = arrayOf("Doctor A", "Doctor B", "Doctor C")
         spinnerDoctors.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, doctorOptions)
@@ -90,6 +93,38 @@ class CreateActivity : AppCompatActivity() {
             }
         })
     }
+
+    private fun listenSpecialtyChanges() {
+        spinnerSpecialties.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(adapter: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val specialty = adapter?.getItemAtPosition(position) as Specialty
+                loadDoctors(specialty.id)
+
+            }
+        }
+    }
+
+    private fun loadDoctors(specialtyId: Int) {
+        val call = apiService.getDoctors(specialtyId)
+        call.enqueue(object: Callback<ArrayList<Doctor>> {
+            override fun onFailure(call: Call<ArrayList<Doctor>>, t: Throwable) {
+                Toast.makeText(this@CreateActivity, getString(R.string.error_loading_doctors), Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<ArrayList<Doctor>>, response: Response<ArrayList<Doctor>>) {
+                if (response.isSuccessful) { // [200...300)
+                    val doctors = response.body()
+                    spinnerDoctors.adapter = ArrayAdapter<Doctor>(this@CreateActivity, android.R.layout.simple_list_item_1, doctors)
+                }
+            }
+
+        })
+    }
+
 
     private fun showMypetDataToConfirm() {
         tvConfirmDescription.text = etDescription.text.toString()

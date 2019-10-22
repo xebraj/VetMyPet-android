@@ -17,6 +17,7 @@
     <string name="validate_mypet_description">La descripción es muy corta</string>
     <string name="validate_mypet_date">Es necesario seleccionar una fecha</string>
     <string name="validate_mypet_time">Es necesario definir una hora para la cita</string>
-    <string name="error_loading_specialties">Ourrio un problema al cargar las especialidades</string>
+    <string name="error_loading_specialties">Ourrió un problema al cargar las especialidades</string>
+    <string name="error_loading_doctors">Ourrió un problema al cargar los médicos</string>
 
 </resources>
