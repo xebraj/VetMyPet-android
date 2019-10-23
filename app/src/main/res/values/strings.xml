@@ -19,5 +19,6 @@
     <string name="validate_mypet_time">Es necesario definir una hora para la cita</string>
     <string name="error_loading_specialties">Ourrió un problema al cargar las especialidades</string>
     <string name="error_loading_doctors">Ourrió un problema al cargar los médicos</string>
+    <string name="error_loading_hours">No se han podido cargar las horas</string>
 
 </resources>
