@@ -30,6 +30,7 @@
 
 
         <TextView
+                android:id="@+id/etEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -50,6 +51,7 @@
                 android:text="Clave"/>
 
         <EditText
+                android:id="@+id/etPassword"
                 android:textColor="@color/White"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"

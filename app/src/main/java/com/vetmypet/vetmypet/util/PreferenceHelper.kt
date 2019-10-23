@@ -1,4 +1,4 @@
-package com.vetmypet.vetmypet
+package com.vetmypet.vetmypet.util
 
 import android.content.Context
 import android.content.SharedPreferences
