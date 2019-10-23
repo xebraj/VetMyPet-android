@@ -4,30 +4,56 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.vetmypet.vetmypet.R
+import com.vetmypet.vetmypet.io.ApiService
 import com.vetmypet.vetmypet.model.Vetmypet
+import com.vetmypet.vetmypet.util.PreferenceHelper
+import com.vetmypet.vetmypet.util.PreferenceHelper.get
+import com.vetmypet.vetmypet.util.toast
 import kotlinx.android.synthetic.main.activity_mypet.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MypetActivity : AppCompatActivity() {
+
+    private val apiService: ApiService by lazy {
+        ApiService.create()
+    }
+
+    private val preferences by lazy{
+        PreferenceHelper.defaultPrefs(this)
+    }
+
+    private val mypetAdapter = MypetAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mypet)
 
+        loadMypet()
 
-        val mypet = ArrayList<Vetmypet>()
-        mypet.add(
-            Vetmypet(1, "Medico test", "12/12/2019", "3:00 PM")
-        )
 
-        mypet.add(
-            Vetmypet(2, "Medico BB", "15/12/2019", "5:00 PM")
-        )
+        rvMypet.layoutManager = LinearLayoutManager (this )
+        rvMypet.adapter = mypetAdapter
+    }
 
-        mypet.add(
-            Vetmypet(3, "Medico CC", "17/12/2019", "8:00 AM")
-        )
+    private fun loadMypet() {
+        val jwt = preferences["jwt", ""]
+        val call = apiService.getMypet("Bearer $jwt")
+        call.enqueue(object: Callback<ArrayList<Vetmypet>> {
+            override fun onFailure(call: Call<ArrayList<Vetmypet>>, t: Throwable) {
+                toast(t.localizedMessage)
+            }
 
-        rvMypet.layoutManager = LinearLayoutManager (this ) // GridLayoutManager
-        rvMypet.adapter = MypetAdapter(mypet)
+            override fun onResponse(call: Call<ArrayList<Vetmypet>>, response: Response<ArrayList<Vetmypet>>) {
+                if (response.isSuccessful) {
+                    response.body()?.let {
+                        mypetAdapter.mypet = it
+                        mypetAdapter.notifyDataSetChanged()
+                    }
+                }
+            }
+
+        })
     }
 }

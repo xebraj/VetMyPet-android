@@ -6,11 +6,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/bg_gradient"
+        android:animateLayoutChanges="true"
         tools:context=".ui.MypetActivity">
     
     <TextView
             android:layout_marginTop="12dp"
-            android:text="Mis citas medicas"
+            android:text="Mis citas médicas"
             android:textColor="@color/White"
             style="@style/TextAppearance.AppCompat.Medium"
             android:gravity="center_horizontal"

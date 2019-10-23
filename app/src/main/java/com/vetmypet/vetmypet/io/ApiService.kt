@@ -4,6 +4,7 @@ import com.vetmypet.vetmypet.io.response.LoginResponse
 import com.vetmypet.vetmypet.model.Doctor
 import com.vetmypet.vetmypet.model.Schedule
 import com.vetmypet.vetmypet.model.Specialty
+import com.vetmypet.vetmypet.model.Vetmypet
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -29,6 +30,10 @@ interface ApiService {
 
     @POST("logout")
     fun postLogout(@Header("Authorization") authHeader: String): Call<Void>
+
+    @GET("mypet")
+    fun getMypet(@Header("Authorization") authHeader: String):
+            Call<ArrayList<Vetmypet>>
 
     companion object Factory {
         private const val BASE_URL = "http://68.183.155.1/api/"

@@ -10,8 +10,8 @@
 
     <string name="date_format">%1$d-%2$s-%3$s</string>
 
-    <string name="item_Vetmypet_id">Cita medica %1$d</string>
-    <string name="item_Vetmypet_date">Atencion el dia %1$s</string>
+    <string name="item_Vetmypet_id">Cita médica %1$d</string>
+    <string name="item_Vetmypet_date">Atención el día %1$s</string>
     <string name="item_Vetmypet_time">A las %1$s</string>
     <string name="press_back_again">Presione una vez más para salir</string>
     <string name="validate_mypet_description">La descripción es muy corta</string>
@@ -23,5 +23,5 @@
     <string name="error_login_response">Se obtuvo una respuesta inesperada del servidor</string>
     <string name="error_invalid_credentials">Las credenciales son incorrectas</string>
     <string name="error_empty_credentials">Por favor ingrese un correo y contraseña</string>
-
+    <string name="item_Vetmypet_created_at">Esta cita se registró el día %1$s con la siguiente descripción:</string>
 </resources>

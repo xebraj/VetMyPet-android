@@ -50,6 +50,69 @@
 
 
 
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/tvStatus"
+                    tools:text="Confirmada"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <ImageButton
+                    android:id="@+id/ibExpand"
+                    android:layout_gravity="end"
+                    android:background="@color/White"
+                    android:src="@drawable/ic_expand_more"
+                    tools:src="@drawable/ic_expand_less"
+                    android:layout_margin="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+                android:id="@+id/linearLayoutDetails"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/tvSpecialty"
+                    tools:text="Oftalmología"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/tvType"
+                    tools:text="Consulta"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/tvCreateAt"
+                    android:layout_marginTop="8dp"
+                    tools:text="Esta cita se registró el día 2019-10-28 con la siguiente descripción:"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_marginBottom="16dp"
+                    tools:text="Mi perro se golpea con todo"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </android.support.v7.widget.CardView>
