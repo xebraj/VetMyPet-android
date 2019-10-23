@@ -29,7 +29,6 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         btnCreate.setOnClickListener {
-
             val intent = Intent(this, CreateActivity::class.java)
             startActivity(intent)
         }
@@ -63,8 +62,7 @@ class MenuActivity : AppCompatActivity() {
         })
     }
 
-
-    private fun clearSessionPreference(){
+    private fun clearSessionPreference() {
         preferences["jwt"] = ""
     }
 }
