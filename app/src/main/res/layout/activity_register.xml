@@ -8,6 +8,8 @@
         android:orientation="vertical"
         tools:context=".ui.RegisterActivity">
 
+
+
     <TextView
             android:padding="12dp"
             android:layout_width="match_parent"
@@ -17,7 +19,13 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="Registro"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+
+    <ScrollView
+            android:background="@drawable/bg_gradient"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
 
 
     <LinearLayout
@@ -27,38 +35,105 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/White"
-                android:text="Nombre completo" />
+                android:text="Nombre"/>
 
         <EditText
                 android:textColor="@color/White"
                 android:inputType="textPersonName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/White"
-                android:text="Correo" />
+                android:text="Apellido"/>
 
         <EditText
                 android:textColor="@color/White"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/White"
+            android:text="Cedula"/>
+
+
+        <EditText
+                android:textColor="@color/White"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/White"
-                android:text="Clave" />
+                android:text="Direccion"/>
+
+        <EditText
+                android:textColor="@color/White"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/White"
+                android:text="Telefono"/>
+
+        <EditText
+                android:textColor="@color/White"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/White"
+                android:text="Email"/>
+
+        <EditText
+                android:textColor="@color/White"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/White"
+                android:text="Contraseña"/>
+
+        <EditText
+                android:textColor="@color/White"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/White"
+                android:text="Confirmar contraseña" />
 
         <EditText
                 android:textColor="@color/White"
@@ -71,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:text="Registrar" />
+                android:text="Registrar"/>
 
         <TextView
                 android:id="@+id/tvGoToLogin"
@@ -81,10 +156,12 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                android:text="¿Ya tienes una cuenta?" />
+                android:text="¿Ya tienes una cuenta?"/>
+
 
     </LinearLayout>
 
-
+    </ScrollView>
 
 </LinearLayout>
+

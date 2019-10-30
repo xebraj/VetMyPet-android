@@ -11,6 +11,7 @@
         app:cardCornerRadius="8dp"
         android:elevation="8dp"
         android:visibility="gone"
+        tools:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -86,7 +87,7 @@
 
                 <TextView
                         android:id="@+id/tvConfirmType"
-                        tools:text="Conculta"
+                        tools:text="Consulta"
                         android:layout_height="wrap_content"
                         android:layout_width="0dp"
                         android:layout_weight="1"/>

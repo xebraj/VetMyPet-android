@@ -20,7 +20,7 @@ class MypetActivity : AppCompatActivity() {
         ApiService.create()
     }
 
-    private val preferences by lazy{
+    private val preferences by lazy {
         PreferenceHelper.defaultPrefs(this)
     }
 
@@ -30,14 +30,13 @@ class MypetActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mypet)
 
-        loadMypet()
+        loadAppointments()
 
-
-        rvMypet.layoutManager = LinearLayoutManager (this )
+        rvMypet.layoutManager = LinearLayoutManager(this)
         rvMypet.adapter = mypetAdapter
     }
 
-    private fun loadMypet() {
+    private fun loadAppointments() {
         val jwt = preferences["jwt", ""]
         val call = apiService.getMypet("Bearer $jwt")
         call.enqueue(object: Callback<ArrayList<Vetmypet>> {
@@ -53,7 +52,6 @@ class MypetActivity : AppCompatActivity() {
                     }
                 }
             }
-
         })
     }
 }

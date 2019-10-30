@@ -1,10 +1,8 @@
 package com.vetmypet.vetmypet.io
 
 import com.vetmypet.vetmypet.io.response.LoginResponse
-import com.vetmypet.vetmypet.model.Doctor
-import com.vetmypet.vetmypet.model.Schedule
-import com.vetmypet.vetmypet.model.Specialty
-import com.vetmypet.vetmypet.model.Vetmypet
+import com.vetmypet.vetmypet.io.response.SimpleResponse
+import com.vetmypet.vetmypet.model.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -34,6 +32,18 @@ interface ApiService {
     @GET("mypet")
     fun getMypet(@Header("Authorization") authHeader: String):
             Call<ArrayList<Vetmypet>>
+
+    @POST("appointments")
+    @Headers("Accept: application/json")
+    fun storeAppointment(
+        @Header("Authorization") authHeader: String,
+        @Query ("description") description: String,
+        @Query("specialty_id") specialtyId: Int,
+        @Query("doctor_id") doctorId: Int,
+        @Query("scheduled_date") scheduledDate: String,
+        @Query("scheduled_time") scheduledTime: String,
+        @Query("type") type: String
+    ): Call<SimpleResponse>
 
     companion object Factory {
         private const val BASE_URL = "http://68.183.155.1/api/"

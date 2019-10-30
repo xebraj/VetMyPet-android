@@ -2,6 +2,26 @@ package com.vetmypet.vetmypet.model
 
 import com.google.gson.annotations.SerializedName
 
+/*
+{
+    "id": 1,
+    "description": "Tengo dolor de cabeza",
+    "scheduled_date": "2018-11-15",
+    "type": "Examen",
+    "created_at": "2018-11-01 23:55:19",
+    "status": "Cancelada",
+    "scheduled_time_12": "9:00 AM",
+    "specialty": {
+        "id": 3,
+        "name": "Neurología"
+    },
+    "doctor": {
+        "id": 3,
+        "name": "Médico Test"
+    }
+}
+*/
+
 data class Vetmypet (
     val id: Int,
     val description: String,
